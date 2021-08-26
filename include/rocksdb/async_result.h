@@ -54,8 +54,8 @@ struct async_result {
     if (async_) {
       return false;
     } else {
-      std::cout<<"h_.done():"<<h_.done()<<"\n";
-      std::cout<<"result_set_:"<<h_.promise().result_set_<<"\n";
+      //std::cout<<"h_.done():"<<h_.done()<<"\n";
+      //std::cout<<"result_set_:"<<h_.promise().result_set_<<"\n";
       return h_.promise().result_set_;
     }
   }
