@@ -261,7 +261,7 @@ bool GetContext::SaveValue(const ParsedInternalKey& parsed_key,
         if (kNotFound == state_) {
           state_ = kFound;
           if (do_merge_) {
-            if (LIKELY(pinnable_val_ != nullptr)) {
+            if (LIKELY(pinnable_val_ != nullptr && !pinnable_val_->IsPinned())) {
               if (LIKELY(value_pinner != nullptr)) {
                 // If the backing resources for the value are provided, pin them
                 pinnable_val_->PinSlice(value, value_pinner);
